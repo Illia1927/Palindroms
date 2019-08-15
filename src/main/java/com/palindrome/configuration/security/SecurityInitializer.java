@@ -1,4 +1,4 @@
-package com.akhambir.configuration.security;
+package com.palindrome.configuration.security;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

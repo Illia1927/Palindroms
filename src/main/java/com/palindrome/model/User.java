@@ -1,10 +1,11 @@
-package com.akhambir.model;
+package com.palindrome.model;
 
-import com.akhambir.controller.external.model.UserRegistrationPayload;
+import com.palindrome.controller.external.model.UserRegistrationPayload;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,11 +15,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedAttributeNode;
 import javax.persistence.NamedEntityGraph;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "USERS")
@@ -42,13 +44,17 @@ public class User {
             joinColumns = @JoinColumn(name = "FK_USER_ID"),
             inverseJoinColumns = @JoinColumn(name = "FK_ROLE_ID"))
     private List<Role> roles = new ArrayList<>();
-    @OneToMany(mappedBy = "user")
-    private List<Palindromes> palindromes;
-    public List<Palindromes> getPalindromes() {
+
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Set<Palindromes> palindromes = new HashSet<>();
+
+    public Set<Palindromes> getPalindromes() {
         return palindromes;
     }
 
-    public void setPalindromes(List<Palindromes> palindromes) {
+    public void setPalindromes(Set<Palindromes> palindromes) {
         this.palindromes = palindromes;
     }
 

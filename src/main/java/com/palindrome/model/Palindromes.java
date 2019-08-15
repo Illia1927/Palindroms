@@ -1,7 +1,9 @@
-package com.akhambir.model;
+package com.palindrome.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,7 +21,7 @@ public class Palindromes {
     private Long id;
     @Column(name = "NUMBERS")
     private Long numbers;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
     @JoinColumn(name = "FK_USER_ID")
     private User user;
 
@@ -46,4 +48,5 @@ public class Palindromes {
     public void setUser(User user) {
         this.user = user;
     }
+
 }

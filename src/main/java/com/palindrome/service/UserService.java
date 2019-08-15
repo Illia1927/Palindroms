@@ -1,6 +1,6 @@
-package com.akhambir.service;
+package com.palindrome.service;
 
-import com.akhambir.model.User;
+import com.palindrome.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
@@ -13,4 +13,6 @@ public interface UserService extends UserDetailsService {
     User add(User user);
 
     Optional<User> getById(Long id);
+
+    Optional<User> getByEmail(String userEmail);
 }

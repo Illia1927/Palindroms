@@ -1,4 +1,4 @@
-package com.akhambir.model;
+package com.palindrome.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

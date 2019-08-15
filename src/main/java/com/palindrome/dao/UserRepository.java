@@ -1,6 +1,6 @@
-package com.akhambir.dao;
+package com.palindrome.dao;
 
-import com.akhambir.model.User;
+import com.palindrome.model.User;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.akhambir.configuration;
+package com.palindrome.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,7 +19,6 @@ import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.persistence.EntityManagerFactory;
@@ -30,9 +29,9 @@ import java.util.Properties;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("com.akhambir")
+@ComponentScan("com.palindrome")
 @EnableTransactionManagement
-@EnableJpaRepositories("com.akhambir.dao")
+@EnableJpaRepositories("com.palindrome.dao")
 @PropertySource("classpath:application.properties")
 public class ApplicationConfiguration implements WebApplicationInitializer, WebMvcConfigurer {
 
@@ -59,7 +58,7 @@ public class ApplicationConfiguration implements WebApplicationInitializer, WebM
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource);
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        entityManagerFactoryBean.setPackagesToScan("com.akhambir.model");
+        entityManagerFactoryBean.setPackagesToScan("com.palindrome.model");
         entityManagerFactoryBean.setJpaProperties(getJpaProperties());
         return entityManagerFactoryBean;
     }

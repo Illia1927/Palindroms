@@ -1,8 +1,8 @@
-package com.akhambir.service;
+package com.palindrome.service;
 
-import com.akhambir.dao.UserRepository;
-import com.akhambir.model.Role;
-import com.akhambir.model.User;
+import com.palindrome.dao.UserRepository;
+import com.palindrome.model.Role;
+import com.palindrome.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -41,6 +41,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> getById(Long id) {
         return userRepository.getById(id);
+    }
+
+    @Override
+    public Optional<User> getByEmail(String userEmail) {
+        return userRepository.getByEmail(userEmail);
     }
 
     @Override

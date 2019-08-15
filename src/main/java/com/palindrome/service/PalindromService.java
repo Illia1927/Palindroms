@@ -1,6 +1,6 @@
-package com.akhambir.service;
+package com.palindrome.service;
 
-import com.akhambir.model.Palindromes;
+import com.palindrome.model.Palindromes;
 
 import java.util.List;
 import java.util.Optional;

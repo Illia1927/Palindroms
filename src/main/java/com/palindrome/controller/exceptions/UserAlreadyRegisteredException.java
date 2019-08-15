@@ -1,4 +1,4 @@
-package com.akhambir.controller.exceptions;
+package com.palindrome.controller.exceptions;
 
 public class UserAlreadyRegisteredException extends RuntimeException {
 

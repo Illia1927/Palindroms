@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: oleksandrkh
@@ -12,5 +13,6 @@
 </head>
 <body>
     <h1>Sorry! Something went wrong.</h1>
+    <a class="nav-link" href="<c:url value="/home"/>">go back home</a>
 </body>
 </html>

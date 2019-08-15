@@ -1,7 +1,7 @@
-package com.akhambir.service;
+package com.palindrome.service;
 
-import com.akhambir.dao.PalindromRepository;
-import com.akhambir.model.Palindromes;
+import com.palindrome.dao.PalindromRepository;
+import com.palindrome.model.Palindromes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

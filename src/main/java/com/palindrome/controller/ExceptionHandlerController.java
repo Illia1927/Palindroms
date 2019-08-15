@@ -1,7 +1,7 @@
-package com.akhambir.controller;
+package com.palindrome.controller;
 
 
-import com.akhambir.controller.exceptions.UserAlreadyRegisteredException;
+import com.palindrome.controller.exceptions.UserAlreadyRegisteredException;
 import org.apache.log4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

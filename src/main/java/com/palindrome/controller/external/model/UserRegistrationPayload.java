@@ -1,4 +1,4 @@
-package com.akhambir.controller.external.model;
+package com.palindrome.controller.external.model;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

@@ -26,6 +26,7 @@
             <h3 class="masthead-brand">Palindromes numbers</h3>
             <nav class="nav nav-masthead justify-content-center">
                 <a class="nav-link" href="<c:url value="/login"/>">Login</a>
+                <a class="nav-link" href="http://localhost:8080/logout">Logout</a>
                 <a class="nav-link" href="<c:url value="/register"/>">Registration</a>
                 <a class="nav-link" href="<c:url value="/palindromes"/>">Palindromes</a>
             </nav>

@@ -1,6 +1,6 @@
-package com.akhambir.dao;
+package com.palindrome.dao;
 
-import com.akhambir.model.Palindromes;
+import com.palindrome.model.Palindromes;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

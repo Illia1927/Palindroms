@@ -1,6 +1,6 @@
-package com.akhambir.configuration.security;
+package com.palindrome.configuration.security;
 
-import com.akhambir.service.UserService;
+import com.palindrome.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,17 +34,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .httpBasic().disable()
+                .authorizeRequests()
+                .antMatchers("/login", "/register", "/resources/**")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
+                .and()
                 .formLogin()
                 .usernameParameter("email")
                 .loginPage("/login")
                 .defaultSuccessUrl("/home")
                 .failureUrl("/login?error")
-                .and()
-                .authorizeRequests()
-                .antMatchers("/login", "/register", "/resources/**")
                 .permitAll()
-                .anyRequest()
-                .authenticated();
+                .and()
+                .logout().invalidateHttpSession(true)
+                .permitAll();
     }
 
     @Autowired

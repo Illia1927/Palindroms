@@ -1,8 +1,8 @@
-package com.akhambir.controller;
+package com.palindrome.controller;
 
-import com.akhambir.controller.external.model.UserRegistrationPayload;
-import com.akhambir.model.User;
-import com.akhambir.service.UserService;
+import com.palindrome.controller.external.model.UserRegistrationPayload;
+import com.palindrome.model.User;
+import com.palindrome.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,7 +40,6 @@ public class UserController {
         logger.debug("get all user");
         List<User> users = userService.getAll()
                 .orElseGet(Collections::emptyList);
-
         mw.addObject("users", users);
         mw.setViewName("users");
         return mw;
@@ -57,14 +56,14 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ModelAndView register(@Valid @ModelAttribute UserRegistrationPayload urp, BindingResult br, ModelAndView mw) {
         if (br.hasErrors()) {
+            logger.debug("located in registration page");
             mw.addAllObjects(br.getModel());
             mw.setViewName("register");
             return mw;
         }
         userService.add(User.of(urp));
-        logger.debug("located in registration page");
         mw.addObject("user", new User());
-        mw.setViewName("login");
+        mw.setViewName("home");
         return mw;
     }
 
